@@ -4,7 +4,8 @@ import Link from "next/link";
 import Subheadline from "@/components/subheadline";
 import Headline from "@/components/headline";
 
-export default function Home() {
+export default function Home({ breweries }) {
+  console.log("breweries---", breweries);
   return (
     <>
       <div className="block relative w-9/12 h-96">
@@ -83,6 +84,10 @@ export default function Home() {
             1ofusbrewing.com
           </Link>
         </section>
+        {/* List of Breweries */}
+        {breweries.map((brewery) => {
+          return <p>{brewery.name}</p>;
+        })}
         {/* Intro text */}
         <section className="mb-7">
           <Subheadline>About</Subheadline>
