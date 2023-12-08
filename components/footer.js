@@ -1,9 +1,9 @@
 import Image from "next/image";
 import { workFontClass } from "@/lib/fonts.js";
 
-export default function footer() {
+export default function Footer() {
   return (
-    <div className="fixed bottom-0 left-0 flex h-16 w-full items-center justify-between  bg-mediumBackgroundColor px-10 lg:px-60">
+    <div className="fixed bottom-0 left-0 flex h-16 w-full items-center justify-between  bg-mediumGrayBackgroundColor px-10 lg:px-60">
       <a
         className="pointer-events-none lg:pointer-events-auto lg:p-0"
         href="https://gregorsart.com"

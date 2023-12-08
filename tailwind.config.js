@@ -12,10 +12,11 @@ module.exports = {
         current: "currentColor",
         white: "#ffffff",
         primaryColor: "#FF9D00",
-        secondaryColor: "#8A6D61",
+        secondaryColor: "#6A4F45",
         almostBlackColor: "#242422",
         softBackgroundColor: "#F3F3F3",
-        mediumBackgroundColor: "#D5D5D5",
+        mediumGrayBackgroundColor: "#D5D5D5",
+        mediumBrownBackgroundColor: "#7E6A62",
       },
       fontFamily: {
         serif: ["var(--font-bitter)"],
