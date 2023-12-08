@@ -13,12 +13,12 @@ export default function Home({ breweries }) {
           quality={100}
           fill
           className="rounded-lg object-cover"
-          src="/open-brewery-app-hero-v03.jpg"
+          src="/open-brewery-app-hero-v05.jpg"
           alt="Heroimage"
         />
       </div>
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-3 lg:text-left">
+      <div className="mb-32 grid gap-6 text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-3 lg:text-left">
         {/* Random brewery */}
         <section>
           <Headline>Brewery of the moment</Headline>
@@ -84,10 +84,7 @@ export default function Home({ breweries }) {
             1ofusbrewing.com
           </Link>
         </section>
-        {/* List of Breweries */}
-        {breweries.map((brewery) => {
-          return <p>{brewery.name}</p>;
-        })}
+
         {/* Intro text */}
         <section className="mb-7">
           <Subheadline>About</Subheadline>

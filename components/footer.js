@@ -18,7 +18,9 @@ export default function Footer() {
           priority
         />
       </a>
-      <p className={`${workFontClass} font-sans`}>Copryright gregorsart 2023</p>
+      <p className={`${workFontClass} font-sans text-sm`}>
+        Copryright gregorsart 2023
+      </p>
     </div>
   );
 }
