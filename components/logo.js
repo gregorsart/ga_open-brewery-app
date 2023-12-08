@@ -5,7 +5,8 @@ export default function Logo() {
   return (
     <Link href="./">
       <Image
-        className="h-24"
+        className="h-24
+        w-auto"
         src="/open-brewery-app-logo.svg"
         alt="Logo of the brewery app"
         width={878}

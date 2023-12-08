@@ -13,7 +13,7 @@ export default function App({ Component, pageProps }) {
   // error und loading screen
   if (error) return <div>Failed to load</div>;
   if (isLoading) return <div>Loading...</div>;
-  console.log("breweries from _app", data);
+
   return (
     <SWRConfig
       value={{

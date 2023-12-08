@@ -1,13 +1,24 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 import Subheadline from "@/components/subheadline";
 import Headline from "@/components/headline";
+import DetailsCard from "@/components/detailsCard";
 
 export default function Home({ breweries }) {
-  console.log("breweries---", breweries);
+  const [brewery, setBrewery] = useState({});
+  useEffect(() => {
+    const randomNumber = Math.floor(Math.random() * breweries.length);
+    const randomBrewery = breweries[randomNumber];
+    setBrewery(randomBrewery);
+  }, [breweries]);
+  // shorten url for displaying it
+  console.log("www", brewery.website_url);
+
   return (
     <>
+      {/* Hero Image */}
       <div className="block relative w-9/12 h-96">
         <Image
           quality={100}
@@ -18,70 +29,20 @@ export default function Home({ breweries }) {
         />
       </div>
 
-      <div className="mb-32 grid gap-6 text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-3 lg:text-left">
+      <div className="mb-32 flex flex-col">
         {/* Random brewery */}
         <section>
           <Headline>Brewery of the moment</Headline>
-          <Link href="https://www.1ofusbrewing.com" className="group">
-            <div className="mb-2 bg-mediumBrownBackgroundColor group-hover:bg-secondaryColor rounded-lg p-4">
-              <Subheadline>1 of Us Brewing Company</Subheadline>
-              <ul className="divide-y divide-secondaryColor group-hover:divide-mediumBrownBackgroundColor">
-                <li className="flex justify-between py-2">
-                  <p
-                    className={
-                      "text-m-0 max-w-[30ch] text-white font-light text-sm"
-                    }
-                  >
-                    Browery type
-                  </p>
-                  <p
-                    className={
-                      "text-m-0 max-w-[30ch] text-white font-light text-sm"
-                    }
-                  >
-                    micro
-                  </p>
-                </li>
-                <li className="flex justify-between py-2">
-                  <p
-                    className={
-                      "text-m-0 max-w-[30ch] text-white font-light text-sm"
-                    }
-                  >
-                    City
-                  </p>
-                  <p
-                    className={
-                      "text-m-0 max-w-[30ch] text-white font-light text-sm"
-                    }
-                  >
-                    Mount Pleasant
-                  </p>
-                </li>
-                <li className="flex justify-between py-2">
-                  <p
-                    className={
-                      "text-m-0 max-w-[30ch] text-white font-light text-sm"
-                    }
-                  >
-                    Country
-                  </p>
-                  <p
-                    className={
-                      "text-m-0 max-w-[30ch] text-white font-light text-sm"
-                    }
-                  >
-                    United States
-                  </p>
-                </li>
-              </ul>
-            </div>
-          </Link>
+          <DetailsCard brewery={brewery} />
           <Link
-            href="https://www.1ofusbrewing.com"
-            className="text-sm font-normal text-white mb-7 hover:bg-primaryColor bg-secondaryColor rounded-lg p-2 inline-block w-full"
+            href={`${brewery.website_url}`}
+            target="_blank"
+            className="text-center text-sm font-normal text-white mb-7 hover:bg-primaryColor bg-secondaryColor rounded-lg p-2 inline-block w-full"
           >
-            1ofusbrewing.com
+            {/* Remove https and trailing slash */}
+            {brewery.website_url
+              ? brewery.website_url.replace(/^https?\:\/\//i, "")
+              : "Sry, no website provided"}
           </Link>
         </section>
 
