@@ -4,14 +4,14 @@ export default function Pagination({
   limit,
   setLimit,
   hasNextPage,
-  paginatedExpenses,
+  paginatedBreweries,
 }) {
   // pagination settings
   const smallPagination = 8;
   const mediumPagination = 16;
   // Check if the end of the list is reached
-  if (paginatedExpenses.length === 0) setPage(1);
-  if (paginatedExpenses.length < limit) hasNextPage = false;
+  if (paginatedBreweries.length === 0) setPage(1);
+  if (paginatedBreweries.length < limit) hasNextPage = false;
   else hasNextPage = true;
 
   return (
