@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer className="fixed bottom-0 left-0 flex h-16 w-full items-center justify-between  bg-mediumGrayBackgroundColor px-10 lg:px-60">
       <Link
-        className="pointer-events-none lg:pointer-events-auto p-2"
+        className="p-2"
         href="https://gregorsart.com"
         target="_blank"
         rel="noopener noreferrer"
