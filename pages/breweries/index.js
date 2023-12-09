@@ -4,9 +4,8 @@ import Headline from "@/components/headline";
 import DetailsCard from "@/components/detailsCard";
 import Pagination from "@/components/pagination";
 export default function Breweries({ breweries }) {
-  const [isFiltered, setIsFiltered] = useState(false);
+  const [limit, setLimit] = useState(8);
   const [page, setPage] = useState(1);
-  const [limit, setLimit] = useState(4);
 
   // Setting up the pagination
   const paginatedExpenses = breweries.slice((page - 1) * limit, page * limit);
@@ -15,6 +14,7 @@ export default function Breweries({ breweries }) {
 
   return (
     <>
+      {/* List of breweries */}
       <section className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 lg:auto-rows-fr lg:max-w-5xl lg:w-full">
         <Headline>List of all Breweries</Headline>
         {paginatedExpenses.map((brewery) => {
@@ -22,7 +22,6 @@ export default function Breweries({ breweries }) {
         })}
       </section>
       <Pagination
-        isFiltered={isFiltered}
         page={page}
         setPage={setPage}
         limit={limit}

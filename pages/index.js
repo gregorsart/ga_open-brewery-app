@@ -16,12 +16,12 @@ export default function Home({ breweries }) {
 
   return (
     <>
-      {/* Hero Image */}
+      {/* Hero image */}
       <div className="block relative w-9/12 h-96">
         <Image
           quality={100}
           fill
-          className="rounded-lg object-cover"
+          className="rounded-3xl object-cover"
           src="/open-brewery-app-hero-v05.jpg"
           alt="Heroimage"
         />
@@ -47,16 +47,16 @@ export default function Home({ breweries }) {
         <section>
           <Headline>Brewery of the moment</Headline>
           <DetailsCard brewery={brewery} />
-          <Link
-            href={`${brewery.website_url}`}
-            target="_blank"
-            className="text-center text-sm font-normal text-white mb-7 hover:bg-primaryColor bg-secondaryColor rounded-lg p-2 inline-block w-full"
-          >
-            {/* Remove https and trailing slash */}
-            {brewery.website_url
-              ? brewery.website_url.replace(/^https?\:\/\//i, "")
-              : "Sry, no website provided"}
-          </Link>
+          {brewery.website_url && (
+            <Link
+              href={`${brewery.website_url}`}
+              target="_blank"
+              className="text-center text-sm font-normal text-white mt-4 mb-12 hover:bg-primaryColor bg-secondaryColor rounded-lg p-2 inline-block w-full"
+            >
+              {/* Remove https and trailing slash */}
+              {brewery.website_url.replace(/^https?\:\/\//i, "")}
+            </Link>
+          )}
         </section>
 
         {/* Intro text */}
