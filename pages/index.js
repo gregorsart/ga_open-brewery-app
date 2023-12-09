@@ -54,13 +54,15 @@ export default function Home({ breweries }) {
               className="text-center text-sm font-normal text-white mt-4 mb-12 hover:bg-primaryColor bg-secondaryColor rounded-lg p-2 inline-block w-full"
             >
               {/* Remove https and trailing slash */}
-              {brewery.website_url.replace(/^https?\:\/\//i, "")}
+              {brewery.website_url
+                .replace(/^https?\:\/\//i, "")
+                .replace(/\/$/, "")}
             </Link>
           )}
         </section>
 
         {/* Intro text */}
-        <section className="mb-7">
+        <section className="mb-7 mt-7">
           <Subheadline>About</Subheadline>
           <p className={"text-m-0 max-w-[30ch]"}>
             Goal is to render the data that I took from{" "}
