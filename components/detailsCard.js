@@ -4,9 +4,16 @@ import Subheadline from "@/components/subheadline";
 export default function detailsCard({ brewery }) {
   const { name, brewery_type, city, country, id } = brewery;
   return (
-    <Link href={`/breweries/${id}`} className="group">
+    <Link href={`/breweries/${id}`} className="group relative block">
+      {/* Decorative cicles */}
+      <div className="absolute w-2 h-2 rounded-full inline-block bg-secondaryColor group-hover:bg-mediumBrownBackgroundColor left-2 top-2"></div>
+      <div className="absolute w-2 h-2 rounded-full inline-block bg-secondaryColor group-hover:bg-mediumBrownBackgroundColor right-2 top-2"></div>
+      <div className="absolute w-2 h-2 rounded-full inline-block bg-secondaryColor group-hover:bg-mediumBrownBackgroundColor left-2 bottom-2"></div>
+      <div className="absolute w-2 h-2 rounded-full inline-block bg-secondaryColor group-hover:bg-mediumBrownBackgroundColor right-2 bottom-2"></div>
+
       <div className="mb-2 flex flex-col justify-between bg-mediumBrownBackgroundColor group-hover:bg-secondaryColor rounded-lg p-4 h-full">
         <Subheadline>{name}</Subheadline>
+        {/* Start cards */}
         <ul className="divide-y divide-secondaryColor group-hover:divide-mediumBrownBackgroundColor">
           <li className="flex justify-between py-2">
             <p

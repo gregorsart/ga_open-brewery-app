@@ -13,8 +13,6 @@ export default function Home({ breweries }) {
     const randomBrewery = breweries[randomNumber];
     setBrewery(randomBrewery);
   }, [breweries]);
-  // shorten url for displaying it
-  console.log("www", brewery.website_url);
 
   return (
     <>
@@ -27,6 +25,21 @@ export default function Home({ breweries }) {
           src="/open-brewery-app-hero-v05.jpg"
           alt="Heroimage"
         />
+        <div class="absolute w-full h-full top-0 bottom-0 left-0 right-0 flex items-center justify-center">
+          <Link
+            href="/breweries"
+            className="group flex gap:2 text-xl px-4 py-2 rounded  text-white bg-primaryColor hover:bg-secondaryColor"
+          >
+            <Image
+              width={30}
+              height={30}
+              src="/arrow-right.svg"
+              alt="Arrow icon"
+              className="transition-all ease-in-out mr-0 group-hover:mr-4"
+            />
+            List of all breweries
+          </Link>
+        </div>
       </div>
 
       <div className="mb-32 flex flex-col">
