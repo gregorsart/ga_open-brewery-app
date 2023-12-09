@@ -4,7 +4,7 @@ import { workFontClass } from "@/lib/fonts.js";
 
 export default function Footer() {
   return (
-    <div className="fixed bottom-0 left-0 flex h-16 w-full items-center justify-between  bg-mediumGrayBackgroundColor px-10 lg:px-60">
+    <footer className="fixed bottom-0 left-0 flex h-16 w-full items-center justify-between  bg-mediumGrayBackgroundColor px-10 lg:px-60">
       <Link
         className="pointer-events-none lg:pointer-events-auto p-2"
         href="https://gregorsart.com"
@@ -22,6 +22,6 @@ export default function Footer() {
       <p className={`${workFontClass} font-sans text-sm`}>
         Copryright gregorsart 2023
       </p>
-    </div>
+    </footer>
   );
 }
