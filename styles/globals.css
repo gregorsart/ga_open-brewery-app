@@ -9,5 +9,6 @@
 }
 
 body {
-  color: #404038;
+  /* is the same as the tailwind color variable almostBlackColor */
+  color: #242422;
 }

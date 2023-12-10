@@ -16,12 +16,12 @@ export default function Home({ breweries }) {
 
   return (
     <>
-      {/* Hero Image */}
-      <div className="block relative w-9/12 h-96">
+      {/* Hero image */}
+      <div className="block relative w-72 md:w-9/12 lg:w-10/12 h-96">
         <Image
           quality={100}
           fill
-          className="rounded-lg object-cover"
+          className="rounded-3xl object-cover"
           src="/open-brewery-app-hero-v05.jpg"
           alt="Heroimage"
         />
@@ -37,7 +37,7 @@ export default function Home({ breweries }) {
               alt="Arrow icon"
               className="transition-all ease-in-out mr-0 group-hover:mr-4"
             />
-            List of all breweries
+            List all breweries
           </Link>
         </div>
       </div>
@@ -47,26 +47,28 @@ export default function Home({ breweries }) {
         <section>
           <Headline>Brewery of the moment</Headline>
           <DetailsCard brewery={brewery} />
-          <Link
-            href={`${brewery.website_url}`}
-            target="_blank"
-            className="text-center text-sm font-normal text-white mb-7 hover:bg-primaryColor bg-secondaryColor rounded-lg p-2 inline-block w-full"
-          >
-            {/* Remove https and trailing slash */}
-            {brewery.website_url
-              ? brewery.website_url.replace(/^https?\:\/\//i, "")
-              : "Sry, no website provided"}
-          </Link>
+          {brewery.website_url && (
+            <Link
+              href={`${brewery.website_url}`}
+              target="_blank"
+              className="text-center text-sm font-normal text-white mt-4 mb-12 hover:bg-primaryColor bg-secondaryColor rounded-lg p-2 inline-block w-full"
+            >
+              {/* Remove https and trailing slash */}
+              {brewery.website_url
+                .replace(/^https?\:\/\//i, "")
+                .replace(/\/$/, "")}
+            </Link>
+          )}
         </section>
 
         {/* Intro text */}
-        <section className="mb-7">
+        <section className="mb-7 mt-7">
           <Subheadline>About</Subheadline>
           <p className={"text-m-0 max-w-[30ch]"}>
             Goal is to render the data that I took from{" "}
             <Link
               href="https://www.openbrewerydb.org/"
-              className=" hover:border-b-primaryColor hover:border-b-2 pb-1 font-medium"
+              className=" hover:underline hover:underline-offset-8 hover:decoration-2 hover:decoration-primaryColor font-medium"
             >
               openbrewerydb.org
             </Link>
