@@ -17,7 +17,7 @@ export default function Home({ breweries }) {
   return (
     <>
       {/* Hero image */}
-      <div className="block relative w-72 md:w-9/12 h-96">
+      <div className="block relative w-72 md:w-9/12 lg:w-10/12 h-96">
         <Image
           quality={100}
           fill
@@ -37,7 +37,7 @@ export default function Home({ breweries }) {
               alt="Arrow icon"
               className="transition-all ease-in-out mr-0 group-hover:mr-4"
             />
-            List of all breweries
+            List all breweries
           </Link>
         </div>
       </div>
