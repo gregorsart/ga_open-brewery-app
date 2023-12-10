@@ -17,7 +17,7 @@ export default function Home({ breweries }) {
   return (
     <>
       {/* Hero image */}
-      <div className="block relative w-9/12 h-96">
+      <div className="block relative w-72 md:w-9/12 h-96">
         <Image
           quality={100}
           fill
@@ -68,7 +68,7 @@ export default function Home({ breweries }) {
             Goal is to render the data that I took from{" "}
             <Link
               href="https://www.openbrewerydb.org/"
-              className=" hover:border-b-primaryColor hover:border-b-2 pb-1 font-medium"
+              className=" hover:underline hover:underline-offset-8 hover:decoration-2 hover:decoration-primaryColor font-medium"
             >
               openbrewerydb.org
             </Link>

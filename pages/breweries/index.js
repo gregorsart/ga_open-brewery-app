@@ -4,7 +4,7 @@ import Headline from "@/components/headline";
 import DetailsCard from "@/components/detailsCard";
 import Pagination from "@/components/pagination";
 export default function Breweries({ breweries }) {
-  const [limit, setLimit] = useState(8);
+  const [limit, setLimit] = useState(9);
   const [page, setPage] = useState(1);
 
   // Setting up the pagination

@@ -7,8 +7,8 @@ export default function Pagination({
   paginatedBreweries,
 }) {
   // pagination settings
-  const smallPagination = 8;
-  const mediumPagination = 16;
+  const smallPagination = 9;
+  const mediumPagination = 15;
   // Check if the end of the list is reached
   if (paginatedBreweries.length === 0) setPage(1);
   if (paginatedBreweries.length < limit) hasNextPage = false;
@@ -42,13 +42,14 @@ export default function Pagination({
         </div>
         <div className="flex gap-4">
           <button
-            className="disabled:opacity-75 font-medium bg-primaryColor hover:bg-secondaryColor hover:text-white p-2 rounded-md w-24"
+            className="disabled:opacity-75 font-medium disabled:hover:bg-primaryColor disabled:hover:text-almostBlackColor bg-primaryColor hover:bg-secondaryColor hover:text-white p-2 rounded-md w-24 disabled:cursor-not-allowed"
             onClick={() => setPage(page - 1)}
+            disabled={page === 1}
           >
             previous
           </button>
           <button
-            className="disabled:opacity-50 font-medium disabled:hover:bg-primaryColor disabled:hover:text-almostBlackColor bg-primaryColor hover:bg-secondaryColor hover:text-white p-2 rounded-md w-24 "
+            className="disabled:opacity-50 font-medium disabled:hover:bg-primaryColor disabled:hover:text-almostBlackColor bg-primaryColor hover:bg-secondaryColor hover:text-white p-2 rounded-md w-24 disabled:cursor-not-allowed"
             disabled={!hasNextPage}
             onClick={() => setPage(page + 1)}
           >
